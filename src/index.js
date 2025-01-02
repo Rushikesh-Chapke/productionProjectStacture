@@ -8,6 +8,9 @@ import  connectDB  from "./DB/index.js";
 
 
 connectDB();;;
+function myFunction(){
+  
+}
 
 /*
 import express from "express";
