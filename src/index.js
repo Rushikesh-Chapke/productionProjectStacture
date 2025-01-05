@@ -1,17 +1,20 @@
-// require('dotenv').config()
-// import dotEvn from "dotenv";
-// import mongoose from "mongoose";
-// import { DB_NAME } from "./constance";
-import  connectDB  from "./DB/index.js";
-// dotEvn.config({ path: "./env" });
+import dotEvn from "dotenv"
+
+import  {connectDB}  from "./DB/index.js";
+dotEvn.config()
+import {app} from './app.js'
 
 
 
-connectDB();;;
-function myFunction(){
-  
-}
-
+connectDB()
+.then(() =>{
+app.listen(process.env.PORT, () =>{
+  console.log(` Server is running on port no: ${process.env.PORT}`)
+})
+})
+.catch((error) =>{
+  console.log("Error occurred while connection to server")
+})
 /*
 import express from "express";
 const app = express();
